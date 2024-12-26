@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: cat
+  security:
+    user:
+      name: ilya
+      password: 11
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres	
+    password: admin
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: always
+    initialize: true
+    schema: classpath:/schema.sql
+    continue-on-error: true
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    database: POSTGRESQL
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+  database:
+    driverClassName: org.postgresql.Driver
+server:
+  port: 8080
+  session-timeout: 1800
+  address: localhost
+  context-path: /cat
+  servlet-path: /admin
